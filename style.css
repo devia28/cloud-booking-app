@@ -1,0 +1,109 @@
+/* Reset and base styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #eef;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the booking form and list */
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Booking form styling */
+.booking-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aaa;
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.booking-form h2 {
+  margin-top: 0;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.booking-form button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background: #0056b3;
+}
+
+/* Booking list styling */
+.booking-list {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aaa;
+  flex: 1 1 300px;
+  max-width: 600px;
+  overflow-x: auto;
+}
+
+.booking-list h3 {
+  margin-top: 0;
+}
+
+.booking-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-list th,
+.booking-list td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.booking-list th {
+  background-color: #f2f2f2;
+}
+
+.booking-list .delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.booking-list .delete-btn:hover {
+  background: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-form,
+  .booking-list {
+    max-width: 100%;
+  }
+}

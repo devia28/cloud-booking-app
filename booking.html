@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA and Massage Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .left-panel, .right-panel {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .left-panel h1 {
+      margin-top: 0;
+    }
+
+    .user-info span {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    .right-panel {
+      position: relative;
+    }
+
+    #logoutBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #logoutBtn:hover {
+      background: #892832;
+    }
+
+    .right-panel h2 {
+      margin-top: 0;
+      padding-right: 100px; /* To ensure the heading doesn't overlap with the logout button */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .delete-btn {
+      padding: 5px 10px;
+      background-color: #e81a2f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      background-color: #981724;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left panel: Booking form -->
+    <div class="left-panel">
+      <h1>Welcome to the SPA Booking System</h1>
+      <div class="user-info">
+      <span id="userName"></span>
+      <span id="userEmail"></span>
+      <span id="userContact"></span>
+        <span id="userAddress"></span>
+
+      </div>
+
+      <form id="bookingForm">
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="tel" id="phone" placeholder="Phone Number" required>
+  <input type="text" id="street" placeholder="Street Address" required>
+  <input type="text" id="city" placeholder="City" required>
+  <input type="text" id="province" placeholder="Province" required>
+  <input type="text" id="Zip Code" placeholder="Zip Code" required>
+  <select id="service" required>
+    <option value="" disabled selected>Choose a service</option>
+    <option value="Swedish Massage">Swedish Massage</option>
+    <option value="Shiatsu Massage">Shiatsu Massage</option>
+    <option value="Thai-Swiatsu Massage">Thai-Swiatsu Massage</option>
+    <option value="Hot Stone Massage">Hot Stone Massage</option>
+    <option value="Ventosa">Ventosa</option>
+    <option value="Foot Massage">Foot Massage</option>
+    <option value="Back Massage">Back Massage</option>
+    <option value="Hand Parffin Wrap">Hand Parffin Wrap</option>
+    <option value="Foot Parffin Wrap">Foot Parffin Wrap</option>
+    <option value="Foot File and Wrap">Foot File and Wrap</option>
+    <option value="Body Whitening Scrub">Body Whitening Scrub</option>
+    <option value="Facial Mask">Facial Mask</option>
+  </select>
+  <input type="date" id="date" required>
+  <input type="time" id="time" required>
+  <button type="submit">Book Now</button>
+</form>
+
+    </div>
+
+    <!-- Right panel: Booking list -->
+    <div class="right-panel">
+      <button id="logoutBtn">Logout</button>
+      <h2>Your Bookings</h2>
+      <table id="bookingTable">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Booking Date</th>
+            <th>Booked On</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Booking rows will go here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="booking.js"></script>
+</body>
+</html>

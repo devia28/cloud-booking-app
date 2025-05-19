@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forgot Password</title>
+  <style>
+    /* Reset default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      color: #333333;
+    }
+
+    .container input[type="email"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2575fc;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .container button:hover {
+      background-color: #1a5edb;
+    }
+
+    .container p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .container a {
+      color: #2575fc;
+      text-decoration: none;
+    }
+
+    .container a:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Forgot Password</h2>
+    <input type="email" id="forgotEmail" placeholder="Enter your email" required />
+    <button onclick="forgotPassword()">Reset Password</button>
+    <p><a href="index.html">Back to Login</a></p>
+    <p id="forgotMessage" class="message"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
